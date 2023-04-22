@@ -1,0 +1,87 @@
+@import "../_variables.scss";
+@import "../_mixins.scss";
+@import "../_placeholders.scss";
+
+.navbar {
+  // border: 1px solid red;
+  width: 100vw;
+  height: 60px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  display: flex;
+
+  .nav-logo {
+    height: 100%;
+    margin-left: 10px;
+  }
+
+  .nav-links {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .link {
+      height: 100%;
+      list-style: none;
+      letter-spacing: 0.02em;
+      padding: 0 5px;
+      margin: 0 3vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      
+      a {
+        @extend %transition-base;
+        text-decoration: none ;
+      }
+
+      .underline {
+        @extend %transition-base;
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        border-top: 1px solid $text-color-hover-1;
+      }
+      
+      &:hover a {
+        color: $text-color-hover-1;
+      }
+
+      &:hover .underline {
+        border-left: 1px solid $text-color-hover-1;
+        animation: slidein 0.5s ease-in-out forwards;
+      }
+      
+      &:not(:hover) .underline {
+        animation: slideout 0.5s ease-in-out forwards;
+      }
+      
+      @keyframes slidein {
+        from {
+          transform: scaleX(0);
+          transform-origin: left;
+        }
+        to {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+      }
+      
+      @keyframes slideout {
+        from {
+          transform: scaleX(1);
+          transform-origin: right;
+        }
+        to {
+          transform: scaleX(0);
+          transform-origin: right;
+        }
+      }
+      
+
+    }
+  }
+}
