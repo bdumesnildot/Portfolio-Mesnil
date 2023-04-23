@@ -4,22 +4,31 @@
 
 .navbar {
   // border: 1px solid red;
-  width: 100vw;
+  
   height: 60px;
-  margin-bottom: 10px;
+  margin: 10px 20px;
   background-color: transparent;
+  text-transform: uppercase;
+  color: $text-color-1;
   display: flex;
+  justify-content: space-between;
+  @media screen and (min-width: 769px) {
+    margin: 10px 50px;
+  }
 
   .nav-logo {
-    height: 100%;
-    margin-left: 10px;
+    margin-top: 5%;
+    height: 80%;
+    @media screen and (min-width: 769px) {
+      margin-top: 0;
+      height: 100%;
+    }
   }
 
   .nav-links {
     flex-grow: 1;
-    display: flex;
+    @extend %flex-align-center;
     justify-content: center;
-    align-items: center;
 
     .link {
       height: 100%;
@@ -80,8 +89,44 @@
           transform-origin: right;
         }
       }
-      
+    }
+  }
 
+  .nav-menu {
+    @extend %transition-base;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: 0;
+    padding: 0 5px;
+    text-transform: uppercase;
+    color: $text-color-1;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:before {
+      @extend %transition-base;
+      content: "";
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: $text-color-1;
+      position: absolute;
+      left: -1em;
+      top: 40%;
+    }
+    
+    &:hover {
+      // transform: scale(0.5);
+      color: $text-color-hover-1;
+    }
+
+    &:hover:before {
+      transform: scale(0.7);
+      transform-origin: center;
+      background-color: $text-color-hover-1;
     }
   }
 }
