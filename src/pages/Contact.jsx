@@ -14,13 +14,13 @@ function Contact() {
 
   return (
     <div className="contact">
-      <h1>Contact</h1>
+      <h2>Contact</h2>
       <div className="contact-form-cont">
         <form
           className="contact-form"
           onSubmit={handleSubmit}
         >
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
             id="name"
@@ -30,7 +30,7 @@ function Contact() {
             required
           />
 
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
@@ -40,7 +40,7 @@ function Contact() {
             required
           />
 
-          <label htmlFor="message">Message:</label>
+          <label htmlFor="message">Message</label>
           <textarea
             id="message"
             name="message"
@@ -49,7 +49,7 @@ function Contact() {
             required
           ></textarea>
 
-          <button type="submit">Send</button>
+          <button className="btn-type-1" type="submit"></button>
         </form>
 
       </div>

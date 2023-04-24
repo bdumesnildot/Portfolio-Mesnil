@@ -3,29 +3,141 @@
 @import "../_placeholders.scss";
 
 .contact {
-  border: 1px solid red;
+  // border: 1px solid red;
   width: 100%;
   color: $text-color-1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: calc(100vh - 95px);
+  align-items: center;
+  justify-items: center;
 
-  h1 {
-    @extend %h1-pages
+  h2 {
+    grid-column-start: 1;
+    align-self: start;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-family: $font-family-1-poppin;
+    font-weight: 400;
+    font-size: 3rem;
+    letter-spacing: .02em;
+    margin: 50px 50px 50px 100px;
   }
 
   .contact-form-cont {
-    border: 1px solid blue;
-    flex-grow: 1;
+    grid-column-start: 2;
+    width: 100%;
+    padding-right: 150px;
 
     .contact-form {
-      margin: 10px 30px;
       background-color: transparent;
       display: flex;
       flex-direction: column;
-  
-      input {
-        width: 60%;
+      align-items: flex-start;
+
+      label {
+        @extend %title-upperCase-spacing;
       }
+  
+      input, textarea {
+        width: 100%;
+        margin-bottom: 20px;
+        background-color: transparent;
+        border: 2px solid $border-color-1;
+        border-radius: 2px;
+        outline: none;
+        padding: 5px;
+
+        &:focus {
+          border: 2px solid $button-color-hover-1;
+        }
+      }
+
+      textarea {
+        height: 200px;
+        resize: none;
+        padding: 5px;
+      }
+
+      .btn-type-1 {
+        align-self: flex-end;
+        position: relative;
+        height: 30px;
+        width: 95px;
+        padding: 6px 30px;
+        margin: 6px 0;
+        background-color: $button-color-1;
+        color: $background-color-1;
+        border: none;
+        border-radius: 60px;
+
+        &:before {
+          @extend %transition-base;
+          content: "SEND";
+          font-size: 1rem;
+          letter-spacing: .02em;
+          text-transform: uppercase;
+          position: absolute;
+          top: 14%;
+          margin: auto;
+          left: 0;
+          right: 0;
+          transform: translateX(-30);
+        }
+
+        &:after {
+          @extend %transition-base;
+          content: "";
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: $background-color-1;
+          position: absolute;
+          top: 35%;
+          right: 15px;
+          opacity: 0;
+        }
+
+        &:hover:before {
+          animation: slideleft 0.5s ease-in-out forwards;
+        }
+        
+        &:not(:hover):before {
+          animation: slideright 0.5s ease-in-out forwards;
+        }
+
+        &:hover:after {
+          animation: appear 0.5s ease-in-out forwards;
+        }
+        
+        @keyframes slideleft {
+          from {
+            transform: translateX(0px);
+          }
+          to {
+            transform: translateX(-10px);
+          }
+        }
+
+        @keyframes slideright {
+          from {
+            transform: translateX(-10px);
+          }
+          to {
+            transform: translateX(0px);
+          }
+        }
+
+        @keyframes appear {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+      }
+
     }
   }
 }
