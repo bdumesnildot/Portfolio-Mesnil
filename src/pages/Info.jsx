@@ -1,8 +1,12 @@
+import React, { useState } from "react";
+import "../styles/pages-styles/Info.scss";
 
 function Info() {
 
   return(
-    <>Info</>
+    <div className="info">
+      <h1>Info</h1>
+    </div>
   )
 } 
 

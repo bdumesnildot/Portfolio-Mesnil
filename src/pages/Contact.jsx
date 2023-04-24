@@ -1,9 +1,60 @@
+import React, { useState } from "react";
+import "../styles/pages-styles/Contact.scss";
 
 function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  return(
-    <>Contact</>
-  )
-} 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
+    // Send the form data to the server here
+  };
+
+  return (
+    <div className="contact">
+      <h1>Contact</h1>
+      <div className="contact-form-cont">
+        <form
+          className="contact-form"
+          onSubmit={handleSubmit}
+        >
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
+          <label htmlFor="message">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+          ></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+
+      </div>
+    </div>
+  );
+}
 
 export default Contact;

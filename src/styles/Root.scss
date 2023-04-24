@@ -1,0 +1,28 @@
+@import "_variables.scss";
+@import "_placeholders.scss";
+@import "_mixins.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family-1-poppin;
+}
+
+.root-page {
+  width: 100vw;
+  min-height: calc(100vh - 60px);
+}
+
+h1 {
+  color: $title-color-1;
+  font-family: $font-family-2-EbGaramond;
+  font-weight: 400;
+  font-size: 4rem;
+  @media screen and (min-width: 425px) {
+    font-size: 6rem;
+  }
+  @media screen and (min-width: 769px) {
+    font-size: 8rem;
+  }
+}

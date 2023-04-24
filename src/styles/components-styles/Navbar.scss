@@ -3,8 +3,6 @@
 @import "../_placeholders.scss";
 
 .navbar {
-  // border: 1px solid red;
-  
   height: 60px;
   margin: 10px 20px;
   background-color: transparent;
@@ -45,6 +43,7 @@
       a {
         @extend %transition-base;
         text-decoration: none ;
+        color:$text-color-1;
       }
 
       .underline {

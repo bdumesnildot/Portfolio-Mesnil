@@ -1,8 +1,12 @@
+import React, { useState } from "react";
+import "../styles/pages-styles/Projects.scss";
 
 function Projets() {
 
   return(
-    <>Projets</>
+    <div className="projects">
+      <h1>Projets</h1>
+    </div>
   )
 } 
 
