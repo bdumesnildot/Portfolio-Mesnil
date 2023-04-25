@@ -1,0 +1,46 @@
+@import "../_variables.scss";
+@import "../_mixins.scss";
+@import "../_placeholders.scss";
+
+.welcome {
+  width: 100vw;
+  min-height: calc(100vh - 60px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    .left-background {
+      grid-column-start: 1;
+      align-self: end;
+      justify-self: end;
+      height: 80%;
+      width: 50%;
+      background-color: $background-color-2;
+    }
+
+    .right-background {
+      grid-column-start: 2;
+      align-self: center;
+      justify-self: start;
+      height: 80%;
+      width: 85%;
+      background-color: $content-background-color-1;
+    }
+  }
+
+  .circular-text {
+    height: 500px;
+    font-family: $font-family-2-EbGaramond;
+    transform: rotate(-30deg);
+    transform-origin: center;
+  }
+}
