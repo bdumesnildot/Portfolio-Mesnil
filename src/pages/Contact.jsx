@@ -1,45 +1,29 @@
-import React, { useState } from "react";
-import emailjs from '@emailjs/browser';
+import React, { useEffect } from "react";
+import { useForm } from 'react-hook-form';
+
 import "../styles/pages-styles/Contact.scss";
 
+import sendEmail from "../utils/sendEmail";
+
 function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const { 
+    register, 
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitSuccessful },
+  } = useForm();
 
-  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-  const templateParams = {
-    from_name: name,
-    from_email: email,
-    message: message,
-  };
-
-  const handleNameChange = (event) => {
-    const input = event.target;
-    setName(input.value);
+  const onSubmit = (data) => {
+    console.log(data);
+    // sendEmail(data.userName, data.email, data.message);
   }
 
-  const handleEmailChange = (event) => {
-    const input = event.target;
-    setEmail(input.value);
-  }
-
-  const handleMessageChange = (event) => {
-    const input = event.target;
-    setMessage(input.value);
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    emailjs.send(serviceId, templateId, templateParams, publicKey)
-	    .then((response) => {
-	      console.log('SUCCESS!', response.status, response.text);
-	    }, (err) => {
-	      console.log('FAILED...', err);
-	    });
-  };
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+      alert("message envoyé 👍")
+    }
+  }, [isSubmitSuccessful, reset]);
 
   return (
     <div className="contact">
@@ -47,36 +31,58 @@ function Contact() {
       <div className="contact-form-cont">
         <form
           className="contact-form"
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmit(onSubmit)}
         >
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={name}
-            onChange={handleNameChange}
-            required
-          />
+          <p className="label" >
+            Nom
+            <span className="error" >
+              {errors.userName?.message}
+            </span>
+          </p>
+          <input type="text" {...register("userName", {
+            required: true,
+            minLength: {
+              value: 3,
+              message: "saisir 3 charactères minimun"
+            },
+            maxLength: {
+              value: 80,
+              message: "saisir 80 charactères maximun"
+            }
+          })} />
 
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={handleEmailChange}
-            required
-          />
+          <p className="label" >
+            Email
+            <span className="error" >
+              {errors.email?.message}
+            </span>
+          </p>
+          <input type="text" {...register("email", {
+            required: true, 
+            pattern: {
+              value: /^\S+@\S+$/i,
+              message: "saisir une adresse valide"
+            }
+          })} />
 
-          <label htmlFor="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            value={message}
-            onChange={handleMessageChange}
-            required
-          ></textarea>
+          <p className="label" >
+            Message
+            <span className="error" >
+              {errors.message?.message}
+            </span>
+          </p>
+          <textarea {...register("message", {
+            required: true, 
+            minLength: {
+              value: 20,
+              message: "saisir 20 charactères minimun"
+            },
+            maxLength: {
+              value: 999,
+              message: "saisir 999 charactères maximun"
+            }
+          })} />
+
 
           <button 
             className="btn-type-1" 

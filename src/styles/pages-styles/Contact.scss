@@ -62,12 +62,24 @@
       flex-direction: column;
       align-items: flex-start;
 
-      label {
+      .label {
         @extend %title-upperCase-spacing;
       }
-  
+
+      .error {
+        margin-left: 5px;
+        text-transform: none;
+        letter-spacing: normal;
+        color: $text-color-2;
+        font-size: 0.7em;
+
+        @media screen and (min-width: 1023px) {
+          margin-left: 10px;
+        }
+      }
+
       input, textarea {
-        @extend %scrollbar;
+        // @extend %scrollbar;
         width: 100%;
         margin-bottom: 20px;
         background-color: transparent;
@@ -82,6 +94,7 @@
       }
 
       textarea {
+        width: 100%;
         height: 40vh;
         resize: none;
         padding: 5px;
