@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from '@emailjs/browser';
 import "../styles/pages-styles/Contact.scss";
 
 function Contact() {
@@ -6,10 +7,38 @@ function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const templateParams = {
+    from_name: name,
+    from_email: email,
+    message: message,
+  };
+
+  const handleNameChange = (event) => {
+    const input = event.target;
+    setName(input.value);
+  }
+
+  const handleEmailChange = (event) => {
+    const input = event.target;
+    setEmail(input.value);
+  }
+
+  const handleMessageChange = (event) => {
+    const input = event.target;
+    setMessage(input.value);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
-    // Send the form data to the server here
+    emailjs.send(serviceId, templateId, templateParams, publicKey)
+	    .then((response) => {
+	      console.log('SUCCESS!', response.status, response.text);
+	    }, (err) => {
+	      console.log('FAILED...', err);
+	    });
   };
 
   return (
@@ -26,7 +55,7 @@ function Contact() {
             id="name"
             name="name"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={handleNameChange}
             required
           />
 
@@ -36,7 +65,7 @@ function Contact() {
             id="email"
             name="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleEmailChange}
             required
           />
 
@@ -45,11 +74,14 @@ function Contact() {
             id="message"
             name="message"
             value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={handleMessageChange}
             required
           ></textarea>
 
-          <button className="btn-type-1" type="submit"></button>
+          <button 
+            className="btn-type-1" 
+            type="submit">
+          </button>
         </form>
 
       </div>

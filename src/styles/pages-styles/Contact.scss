@@ -7,10 +7,18 @@
   width: 100%;
   color: $text-color-1;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 60px 1fr;
   grid-template-rows: calc(100vh - 95px);
   align-items: center;
   justify-items: center;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: auto 1fr;
+  }
+
+  @media screen and (min-width: 1023px) {
+    grid-template-columns: auto 1fr;
+  }
 
   h2 {
     grid-column-start: 1;
@@ -19,15 +27,34 @@
     text-orientation: mixed;
     font-family: $font-family-1-poppin;
     font-weight: 400;
-    font-size: 3rem;
+    font-size: 2rem;
     letter-spacing: .02em;
-    margin: 50px 50px 50px 100px;
+    margin: 20px 15px 20px 15px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 2.5rem;
+      margin: 20px 15px 20px 15px;
+    }
+
+    @media screen and (min-width: 1023px) {
+      font-size: 3rem;
+      margin: 50px 50px 50px 100px;
+    }
   }
 
   .contact-form-cont {
     grid-column-start: 2;
     width: 100%;
-    padding-right: 150px;
+    padding-right: 30px;
+
+    
+    @media screen and (min-width: 768px) {
+      padding-right: 100px;
+    }
+
+    @media screen and (min-width: 1023px) {
+      padding-right: 150px;
+    }
 
     .contact-form {
       background-color: transparent;
@@ -40,6 +67,7 @@
       }
   
       input, textarea {
+        @extend %scrollbar;
         width: 100%;
         margin-bottom: 20px;
         background-color: transparent;
@@ -54,9 +82,13 @@
       }
 
       textarea {
-        height: 200px;
+        height: 40vh;
         resize: none;
         padding: 5px;
+
+        @media screen and (min-width: 1023px) {
+          height: 200px;
+        }
       }
 
       .btn-type-1 {
