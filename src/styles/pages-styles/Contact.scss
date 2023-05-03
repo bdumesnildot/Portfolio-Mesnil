@@ -3,7 +3,6 @@
 @import "../_placeholders.scss";
 
 .contact {
-  // border: 1px solid red;
   width: 100%;
   color: $text-color-1;
   display: grid;
@@ -23,23 +22,7 @@
   h2 {
     grid-column-start: 1;
     align-self: start;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    font-family: $font-family-1-poppin;
-    font-weight: 400;
-    font-size: 2rem;
-    letter-spacing: .02em;
-    margin: 20px 15px 20px 15px;
-
-    @media screen and (min-width: 768px) {
-      font-size: 2.5rem;
-      margin: 20px 15px 20px 15px;
-    }
-
-    @media screen and (min-width: 1023px) {
-      font-size: 3rem;
-      margin: 50px 50px 50px 100px;
-    }
+    @extend %h2-vert;
   }
 
   .contact-form-cont {
@@ -79,7 +62,6 @@
       }
 
       input, textarea {
-        // @extend %scrollbar;
         width: 100%;
         margin-bottom: 20px;
         background-color: transparent;

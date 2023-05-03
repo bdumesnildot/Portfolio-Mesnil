@@ -5,10 +5,40 @@
 .info {
   width: 100%;
   color: $text-color-1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  grid-template-rows: calc(100vh - 95px);
+  align-items: center;
+  justify-items: center;
 
-  h1 {
-    @extend %h1-pages
+  @media screen and (min-width: 768px) {
+    grid-template-columns: auto 1fr;
+  }
+
+  @media screen and (min-width: 1023px) {
+    grid-template-columns: auto 1fr;
+  }
+
+  h2 {
+    grid-column-start: 1;
+    align-self: start;
+    @extend %h2-vert;
+  }
+
+  .info-cont {
+    grid-column-start: 2;
+    width: 100%;
+    padding-right: 30px;
+    align-self: start;
+    margin-top: 20vh;
+
+    
+    @media screen and (min-width: 768px) {
+      padding-right: 100px;
+    }
+
+    @media screen and (min-width: 1023px) {
+      padding-right: 150px;
+    }
   }
 }
