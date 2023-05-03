@@ -6,6 +6,7 @@ import "../styles/Root.scss";
 
 import Navbar from "../components/Navbar";
 import Welcome from "../components/Welcome";
+import SocialLinks from "../components/SocialLinks";
 
 function Root() {
   const location = useLocation();
@@ -18,6 +19,7 @@ function Root() {
   return (
     <div className="root-page">
       <Navbar />
+      <SocialLinks />
       <div className="root-content">
         {isRootPage && <Welcome /> }
         <Outlet />

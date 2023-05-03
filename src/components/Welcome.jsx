@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import "../styles/components-styles/welcome.scss";
 
 function Welcome() {
@@ -22,7 +20,7 @@ function Welcome() {
           strokeWidth="1"
           d="M 32.550491,148.48008 A -108.15144,-108.15144 0 0 1 140.70194,40.328644 -108.15144,-108.15144 0 0 1 248.85338,148.48008 -108.15144,-108.15144 0 0 1 140.70194,256.63153 -108.15144,-108.15144 0 0 1 32.550491,148.48008 Z" />  
         <text fontSize="26" fill="#231815" letterSpacing="1" fontFamily="Poppins, sans-serif">
-          <textPath xlinkHref="#SunCatcherStudio" side="left" startOffset="50">Benoit du Mesnildot / développeur Web</textPath>
+          <textPath xlinkHref="#SunCatcherStudio" startOffset="50">Benoit du Mesnildot / développeur Web</textPath>
         </text>
       </svg>
     </div>

@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "../styles/pages-styles/Info.scss";
 
 function Info() {

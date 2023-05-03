@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useForm } from 'react-hook-form';
 
 import "../styles/pages-styles/Contact.scss";
@@ -15,7 +15,7 @@ function Contact() {
 
   const onSubmit = (data) => {
     console.log(data);
-    // sendEmail(data.userName, data.email, data.message);
+    sendEmail(data.userName, data.email, data.message);
   }
 
   useEffect(() => {
