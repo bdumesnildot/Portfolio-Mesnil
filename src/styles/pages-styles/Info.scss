@@ -41,4 +41,24 @@
       padding-right: 150px;
     }
   }
+
+  .background {
+    z-index: -1;
+    position: absolute;
+    min-height: calc(100vh - 80px);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    .right-background {
+      grid-column-start: 2;
+      align-self: center;
+      justify-self: start;
+      margin: 0 0 70px -40px;
+      height: 80%;
+      width: 85%;
+      background-color: $content-background-color-4;
+    }
+  }
 }

@@ -4,15 +4,16 @@
 
 .welcome {
   width: 100vw;
-  min-height: calc(100vh - 60px);
+  height: calc(100vh - 80px);
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 
   .background {
+    z-index: -1;
     position: absolute;
-    height: 100%;
+    min-height: calc(100vh - 80px);
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -25,7 +26,9 @@
       margin: 70px 0 0 0;
       height: 80%;
       width: 60%;
-      background-color: $background-color-2;
+      background-color: $content-background-color-4;
+      border-radius: 3px;
+      animation: slideUp1 1s cubic-bezier(0, 0.14, 0.03, 1.01);
     }
 
     .right-background {
@@ -35,7 +38,9 @@
       margin: 0 0 70px -40px;
       height: 80%;
       width: 85%;
-      background-color: $content-background-color-1;
+      background-color: $content-background-color-5;
+      border-radius: 3px;
+      animation: slideUp2 1s cubic-bezier(0, 0.14, 0.03, 1.01);
     }
   }
 
@@ -44,7 +49,25 @@
     font-family: $font-family-2-EbGaramond;
     transform: rotate(-56deg);
     transform-origin: center;
-    animation: rotation 2s cubic-bezier(0.02, 0.61, 0.54, 0.99);
+    animation: rotation 1.5s cubic-bezier(0.02, 0.61, 0.54, 0.99);
+  }
+  
+  @keyframes slideUp1 {
+    from {
+      transform: translate(-20px, -20px) scale(0.9);
+    }
+    to {
+      transform: translate(0, 0) scale(1);
+    }
+  }
+  
+  @keyframes slideUp2 {
+    from {
+      transform: translate(-20px, 20px) scale(1.1);
+    }
+    to {
+      transform: translate(0, 0) scale(1);
+    }
   }
   
   @keyframes rotation {

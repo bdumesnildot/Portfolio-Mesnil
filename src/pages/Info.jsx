@@ -41,7 +41,9 @@ function Info() {
           }
         </section>
       </div>
-
+      <div className="background">
+        <div className="right-background"></div>
+      </div>
     </div>
   )
 } 

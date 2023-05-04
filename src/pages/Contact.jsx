@@ -89,7 +89,6 @@ function Contact() {
             type="submit">
           </button>
         </form>
-
       </div>
     </div>
   );

@@ -1,13 +1,12 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from 'react-responsive'
 import "../styles/components-styles/Navbar.scss"
 
-function Navbar() {
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
-  const [menuIsActive, setMenuIsActive] = useState(false)
+function Navbar({ setMenuIsActive }) {
 
-  const handleMenuclick = () => setMenuIsActive(!menuIsActive);
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  
+  const handleMenuclick = () => setMenuIsActive(true);
 
   return(
     <div className="navbar">
