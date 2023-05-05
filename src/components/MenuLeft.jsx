@@ -20,7 +20,12 @@ function Menu({ menuIsActive }) {
           transform: `translateY(${leftY}vh)`
         }}
       >
-
+        <p className="big-text">Portfolio</p>
+        <p className="big-text">Portfolio</p>
+        
+        <div className="menu-left-image">
+          <div className="background"></div>
+        </div>
       </div>
   );
 }
