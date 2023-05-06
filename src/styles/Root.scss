@@ -47,20 +47,17 @@ h2 {
   font-size: 2rem;
 }
 
-h2 {
-  color: $title-color-1;
-  font-family: $font-family-1-poppin;
-  font-weight: 400;
-  font-size: 2rem;
-}
-
 h3 {
   color: $title-color-1;
   font-family: $font-family-2-EbGaramond;
   font-weight: 400;
-  font-size: 4rem;
+  font-size: 3rem;
   letter-spacing: .02em;
   margin: 20px 0;
+
+  @media screen and (min-width: 769px) {
+    font-size: 4rem;
+  }
 }
 
 p {

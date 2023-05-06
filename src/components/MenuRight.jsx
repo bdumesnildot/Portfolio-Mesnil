@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"
 
 import "../styles/components-styles/Menu.scss";
 
+import SocialLinks from "../components/SocialLinks";
+
 function MenuRight({ menuIsActive, setMenuIsActive }) {
   const [rightY, setRightY] = useState(100);
 
@@ -28,7 +30,7 @@ function MenuRight({ menuIsActive, setMenuIsActive }) {
           className="link"
           onClick={ handleMenuclick }
         >
-          <Link to="/" >Home</Link>
+          <Link to="/" >Accueil</Link>
         </div>
         <button 
           className="menu-nav-close"
@@ -51,7 +53,7 @@ function MenuRight({ menuIsActive, setMenuIsActive }) {
           className="link" 
           onClick={ handleMenuclick } 
         >
-          <Link to="/info" >Info</Link>
+          <Link to="/info" >Infos</Link>
         </li>
         <li 
           className="link" 
@@ -61,7 +63,7 @@ function MenuRight({ menuIsActive, setMenuIsActive }) {
         </li>
         </ol>
       </div>
-
+      <SocialLinks />
     </div>
   );
 }

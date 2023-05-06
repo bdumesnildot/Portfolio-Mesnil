@@ -4,10 +4,11 @@
 
 .info {
   width: 100%;
+  min-height: calc(100vh - 70px);
   color: $text-color-1;
   display: grid;
   grid-template-columns: 60px 1fr;
-  grid-template-rows: calc(100vh - 95px);
+  grid-template-rows: 1fr;
   align-items: center;
   justify-items: center;
 
@@ -30,15 +31,17 @@
     width: 100%;
     padding-right: 30px;
     align-self: start;
-    margin-top: 20vh;
+    margin-top: 5vh;
 
     
     @media screen and (min-width: 768px) {
       padding-right: 100px;
+      margin-top: 10vh;
     }
 
     @media screen and (min-width: 1023px) {
       padding-right: 150px;
+      margin-top: 20vh;
     }
   }
 

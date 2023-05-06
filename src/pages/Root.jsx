@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 
 import "../index.scss";
 import "../styles/Root.scss";
-import "../styles/components-styles/Menu.scss";
 
 
 import Navbar from "../components/Navbar";

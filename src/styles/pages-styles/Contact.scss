@@ -4,10 +4,11 @@
 
 .contact {
   width: 100%;
+  min-height: calc(100vh - 70px);
   color: $text-color-1;
   display: grid;
   grid-template-columns: 60px 1fr;
-  grid-template-rows: calc(100vh - 95px);
+  grid-template-rows: 1fr;
   align-items: center;
   justify-items: center;
 

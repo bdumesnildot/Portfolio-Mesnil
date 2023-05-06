@@ -21,11 +21,11 @@ function Menu({ menuIsActive }) {
         }}
       >
         <p className="big-text">Portfolio</p>
-        <p className="big-text">Portfolio</p>
-        
         <div className="menu-left-image">
           <div className="background"></div>
         </div>
+        <p className="big-text">Portfolio</p>
+        
       </div>
   );
 }
