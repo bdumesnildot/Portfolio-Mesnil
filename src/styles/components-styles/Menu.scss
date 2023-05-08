@@ -42,6 +42,7 @@
   .menu-left-image {
     height: 30%;
     width: 100%;
+    transition: all 1s cubic-bezier(0.02, 0.61, 0.54, 0.99) 0.25s;
     
     .background {
       background-color: $content-background-color-3;
@@ -132,6 +133,7 @@
 
       .link {
         padding: 10px 0;
+        transition: all 1s cubic-bezier(0.02, 0.61, 0.54, 0.99) 0.25s;
 
         &:before {
           counter-increment: li;

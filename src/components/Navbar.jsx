@@ -24,7 +24,7 @@ function Navbar({ setMenuIsActive }) {
           <span className="underline"></span>
         </li>
         <li className="link">
-          <Link to="/info" >Infos</Link>
+          <Link to="/infos" >Infos</Link>
           <span className="underline"></span>
         </li>
         <li className="link">

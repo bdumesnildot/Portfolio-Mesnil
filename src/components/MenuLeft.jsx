@@ -2,14 +2,17 @@ import { useState, useEffect } from "react";
 
 import "../styles/components-styles/Menu.scss";
 
-function Menu({ menuIsActive }) {
-  const [leftY, setLeftY] = useState(-100);
+function MenuLeft({ menuIsActive }) {
+  const [leftTranslateY, setLeftTranslateY] = useState(-100);
+  const [leftScaleY, setLeftScaleY] = useState(0);
 
   useEffect(() => {
     if (menuIsActive) {
-      setLeftY(0);
+      setLeftTranslateY(0);
+      setLeftScaleY(1);
     } else {
-      setLeftY(-100);
+      setLeftTranslateY(-100);
+      setLeftScaleY(0);
     }
   }, [menuIsActive])
 
@@ -17,11 +20,17 @@ function Menu({ menuIsActive }) {
       <div 
         className="menu-left-cont"
         style={{
-          transform: `translateY(${leftY}vh)`
+          transform: `translateY(${leftTranslateY}vh)`
         }}
       >
         <p className="big-text">Portfolio</p>
-        <div className="menu-left-image">
+        <div 
+          className="menu-left-image"
+          style={{
+            transform: `scaleY(${leftScaleY})`,
+            transformOrigin: "top",
+          }}
+        >
           <div className="background"></div>
         </div>
         <p className="big-text">Portfolio</p>
@@ -30,4 +39,4 @@ function Menu({ menuIsActive }) {
   );
 }
 
-export default Menu;
+export default MenuLeft;

@@ -15,11 +15,7 @@ function Root() {
   const [menuIsActive, setMenuIsActive] = useState(false)
 
   const location = useLocation();
-  const [isRootPage, setIsRootPage] = useState(location.pathname === "/");
-
-  useEffect(() => {
-    setIsRootPage(location.pathname === "/");
-  }, [location]);
+  const isRootPage = location.pathname === "/" ? true : false;
 
   return (
     <div className="root-page">

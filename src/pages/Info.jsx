@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "../styles/pages-styles/Info.scss";
 import ToggleButton from "../components/ToggleButton";
 
 function Info() {
-  const [isFrench, setIsFrench] = useState(true)
+  const [isFrench, setIsFrench] = useState(true);
+  // const [leftTranslateY, setLeftTranslateY] = useState(-100);
+
+  const location = useLocation();
+  const isInfoPage = location.pathname.includes("/infos");
+  
+  useEffect(() => {
+
+  }, [isInfoPage])
 
   return(
     <div className="info">

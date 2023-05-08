@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 import "../styles/components-styles/SocialLinks.scss";
 
@@ -20,7 +20,7 @@ function SocialLinks() {
         target="_blank"
         onMouseEnter={() => setIsHoverGitHub(true)}
         onMouseLeave={() => setIsHoverGitHub(false)}
-        >
+        > 
           <img
             className="icon"
             src={isHoverGitHub? pathGitHubHover : pathGitHub}
@@ -39,8 +39,6 @@ function SocialLinks() {
               src={isHoverLinkedIn? pathLinkedInHover : pathLinkedIn}
               alt="iconGitHub" />
           </Link>
-
-
     </div>
   );
 }

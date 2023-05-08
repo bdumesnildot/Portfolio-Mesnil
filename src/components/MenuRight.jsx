@@ -6,23 +6,19 @@ import "../styles/components-styles/Menu.scss";
 import SocialLinks from "../components/SocialLinks";
 
 function MenuRight({ menuIsActive, setMenuIsActive }) {
-  const [rightY, setRightY] = useState(100);
+  const [rightTranslateY, setRightTranslateY] = useState(100);
 
   const handleMenuclick = () => setMenuIsActive(false);
 
   useEffect(() => {
-    if (menuIsActive) {
-      setRightY(0);
-    } else {
-      setRightY(100);
-    }
+    menuIsActive ? setRightTranslateY(0) : setRightTranslateY(100);
   }, [menuIsActive])
 
   return (
     <div 
       className="menu-right-cont"
       style={{
-        transform: `translateY(${rightY}vh)`
+        transform: `translateY(${rightTranslateY}vh)`
       }}
     >
       <nav className="menu-nav">
@@ -45,19 +41,28 @@ function MenuRight({ menuIsActive, setMenuIsActive }) {
         <ol>
           <li 
             className="link" 
-            onClick={ handleMenuclick } 
+            onClick={ handleMenuclick }
+            style={{
+              transform: `translateY(${rightTranslateY * 1}vh)`
+            }}
           >
           <Link to="/projets" >Projets</Link>
         </li>
         <li 
           className="link" 
-          onClick={ handleMenuclick } 
+          onClick={ handleMenuclick }
+          style={{
+            transform: `translateY(${rightTranslateY * 2}vh)`
+          }}
         >
-          <Link to="/info" >Infos</Link>
+          <Link to="/infos" >Infos</Link>
         </li>
         <li 
           className="link" 
-          onClick={ handleMenuclick } 
+          onClick={ handleMenuclick }
+          style={{
+            transform: `translateY(${rightTranslateY * 3}vh)`
+          }}
         >
           <Link to="/contact" >Contact</Link>
         </li>
