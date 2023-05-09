@@ -3,12 +3,44 @@
 @import "../_placeholders.scss";
 
 .projects {
-  width: 100%;
+  width: 100vw;
+  min-height: calc(100vh - 70px);
   color: $text-color-1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
 
-  h1 {
-    @extend %h1-pages
+  @media screen and (min-width: 768px) {
+    grid-template-columns: auto 1fr;
+  }
+
+  @media screen and (min-width: 1023px) {
+    grid-template-columns: auto 1fr;
+  }
+
+  h2 {
+    grid-column-start: 1;
+    align-self: start;
+    @extend %h2-vert;
+  }
+
+  .projects-cont {
+    grid-column-start: 2;
+    width: 100%;
+    padding-right: 30px;
+    align-self: start;
+    margin-top: 5vh;
+
+    @media screen and (min-width: 768px) {
+      padding-right: 100px;
+      margin-top: 10vh;
+    }
+
+    @media screen and (min-width: 1023px) {
+      padding-right: 150px;
+      margin-top: 20vh;
+    }
   }
 }

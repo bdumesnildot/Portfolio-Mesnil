@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import "../styles/pages-styles/Contact.scss";
 
 import sendEmail from "../utils/sendEmail";
+import Notification from "../components/Notification/Notification";
 
 function Contact() {
   const { 
@@ -14,14 +15,13 @@ function Contact() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     sendEmail(data.userName, data.email, data.message);
   }
 
   useEffect(() => {
     if (isSubmitSuccessful) {
       reset();
-      alert("message envoyé 👍")
+      return Notification({ text: "Message envoyé avec succès" })
     }
   }, [isSubmitSuccessful, reset]);
 
@@ -82,7 +82,6 @@ function Contact() {
               message: "saisir 999 charactères maximun"
             }
           })} />
-
 
           <button 
             className="btn-type-1" 

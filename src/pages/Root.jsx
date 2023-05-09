@@ -1,15 +1,16 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { ToastContainer } from "react-toastify";
 
 import "../index.scss";
 import "../styles/Root.scss";
-
 
 import Navbar from "../components/Navbar";
 import Welcome from "../components/Welcome";
 import SocialLinks from "../components/SocialLinks";
 import MenuLeft from "../components/MenuLeft";
 import MenuRight from "../components/MenuRight";
+import CloseNotify from "../components/Notification/CloseNotify";
 
 function Root() {
   const [menuIsActive, setMenuIsActive] = useState(false)
@@ -35,6 +36,7 @@ function Root() {
           }}
         />
       </div>
+      <ToastContainer closeButton={CloseNotify} />
     </div>
   );
 }

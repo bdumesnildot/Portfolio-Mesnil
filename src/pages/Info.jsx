@@ -16,7 +16,7 @@ function Info() {
 
   return(
     <div className="info">
-      <h2>Info</h2>
+      <h2>Infos</h2>
       <div className="info-cont">
         <ToggleButton isFrench={isFrench} setIsFrench={setIsFrench} />
         <section>
@@ -38,13 +38,13 @@ function Info() {
             <article id="about">
               <h3>About</h3>
               <p>
-                Engineer on retraining, I am passionate about web programming. My goal is to develop scalable, maintainable and user-friendly web applications that provide a seamless user experience. I am constantly learning and experimenting new technologies and frameworks.
+                Currently undergoing requalification in web programming. My goal is to develop scalable, maintainable and user-friendly web applications that provide a seamless user experience. I am constantly learning and experimenting with new technologies and frameworks.
               </p>
               <p>
-                I more specifically target JavaScript, TypeScript, React, Express and Next (and may be in a near future Vue.js, Java, Angular, Python, Ruby, RoR & many others).
+                I more specifically target JavaScript, TypeScript, React, Express and Next (and maybe in a near future Vue.js, Java, Angular, Python, Ruby, RoR & many others).
               </p>
               <p>
-                I am looking for a contract to start in August 2023 (also open to internship and work-study offers).
+                I am looking for a contract to start in August 2023 (also open to internships and work-study offers).
               </p>
             </article>
           }
