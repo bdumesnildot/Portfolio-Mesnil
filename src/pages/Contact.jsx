@@ -15,7 +15,7 @@ function Contact() {
   } = useForm();
 
   const onSubmit = (data) => {
-    // sendEmail(data.userName, data.email, data.message);
+    sendEmail(data.userName, data.email, data.message);
   }
 
   useEffect(() => {
