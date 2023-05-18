@@ -16,7 +16,7 @@
     grid-template-columns: auto 1fr;
   }
 
-  @media screen and (min-width: 1023px) {
+  @media screen and (min-width: 1224px) {
     grid-template-columns: auto 1fr;
   }
 
@@ -32,7 +32,13 @@
     }
 
     .project-nav {
-      margin-right: 70px;
+      margin-right: 24px;
+      @media screen and (min-width: 768px) {
+        margin-right: 30px;
+      }
+      @media screen and (min-width: 1224px) {
+        margin-right: 70px;
+      }
 
       p {
         letter-spacing: .02em;
@@ -69,7 +75,7 @@
       margin-top: 50px;
     }
 
-    @media screen and (min-width: 1023px) {
+    @media screen and (min-width: 1224px) {
       padding-right: 150px;
       margin-top: 50px;
     }

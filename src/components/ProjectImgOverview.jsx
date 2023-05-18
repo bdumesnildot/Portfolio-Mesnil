@@ -11,7 +11,7 @@ function ProjectImgOverview({currentProject}) {
 
       <div className="description-flex-cont">
         <div className="details">
-          <h3>Détails</h3>
+          <h4>Détails</h4>
           <ul className="detailsList" >
             <li>type : {currentProject.type}</li>
             <li>client : {currentProject.client}</li>
@@ -21,7 +21,7 @@ function ProjectImgOverview({currentProject}) {
           </ul>
         </div>
         <div className="stack">
-          <h3>Principaux outils</h3>
+          <h4>Principaux outils</h4>
           <ul className="stackList" >
             {currentProject.stack.map((techno) => (
               <li key={techno} >{techno}</li>
@@ -36,11 +36,7 @@ function ProjectImgOverview({currentProject}) {
             {<img src={currentProject.media[devise][0][0]} alt="project thumbnail" />}
           </Link>
       </div>
-
-      <p></p>
-
-      </div>
-
+    </div>
   )
 }
 

@@ -27,12 +27,10 @@ function ProjectImgDisplayer() {
     imgCounter !== mediaTotal ? setImgCounter(imgCounter + 1) : setImgCounter(1)
   }
   const handleScroll = (event) => {
-    if (event.deltaY > 0) {
+    if (devise === "desktop" && event.deltaY > 0) {
       projectIndex !== projectList.length - 1 ? setProjectIndex(projectIndex + 1) : setProjectIndex(0)
-      console.log("down")
-    } else if (event.deltaY < 0) {
+    } else if (devise === "desktop" && event.deltaY < 0) {
       projectIndex !== 0 ? setProjectIndex(projectIndex - 1) : setProjectIndex(projectList.length - 1)
-      console.log("up")
     }
   }
 
@@ -54,7 +52,9 @@ function ProjectImgDisplayer() {
       <ProjectImgNav 
         imgCounter={imgCounter} 
         setImgCounter={setImgCounter}
-        mediaTotal={mediaTotal} 
+        mediaTotal={mediaTotal}
+        handlePrevclick={handlePrevclick}
+        handleNextclick={handleNextclick}
       />
       <div 
         className='project-img-flex-cont'

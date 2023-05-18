@@ -6,16 +6,12 @@ function ProjectImgNav(props) {
     imgCounter, 
     setImgCounter,
     mediaTotal,
+    handlePrevclick,
+    handleNextclick,
   } = props
 
   const handleInfoclick = () => {
     setImgCounter(1)
-  }
-  const handlePrevclick = () => {
-    imgCounter !== 1 ? setImgCounter(imgCounter - 1) : setImgCounter(mediaTotal)
-  }
-  const handleNextclick = () => {
-    imgCounter !== mediaTotal ? setImgCounter(imgCounter + 1) : setImgCounter(1)
   }
 
   return (
