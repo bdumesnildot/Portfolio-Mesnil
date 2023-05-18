@@ -2,7 +2,7 @@ import { useOutletContext } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
-import { projectList } from "../data/projectsData"
+import { projectList } from "/src/data/projectsData"
 
 function ProjectNav() {
   const { projectIndex, setProjectIndex } = useOutletContext()

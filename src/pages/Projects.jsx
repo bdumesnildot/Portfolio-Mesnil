@@ -1,7 +1,7 @@
-import "../styles/pages-styles/Projects.scss";
+import "/src/styles/pages-styles/Projects.scss";
 
-import ProjectImgDisplayer from "../components/ProjectImgDisplayer";
-import ProjectNav from "../components/ProjectNav";
+import ProjectImgDisplayer from "/src/components/ProjectImgDisplayer";
+import ProjectNav from "/src/components/ProjectNav";
 
 function Projets() {
 

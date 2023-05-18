@@ -1,4 +1,4 @@
-import "../styles/components-styles/welcome.scss";
+import "/src/styles/components-styles/welcome.scss";
 
 function Welcome() {
 

@@ -3,17 +3,17 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from 'react-responsive'
 import { ToastContainer } from "react-toastify";
 
-import "../index.scss";
-import "../styles/Root.scss";
+import "/src/index.scss";
+import "/src/styles/Root.scss";
 
-import Navbar from "../components/Navbar";
-import Welcome from "../components/Welcome";
-import SocialLinks from "../components/SocialLinks";
-import MenuLeft from "../components/MenuLeft";
-import MenuRight from "../components/MenuRight";
-import CloseNotify from "../components/Notification/CloseNotify";
+import Navbar from "/src/components/Navbar";
+import Welcome from "/src/components/Welcome";
+import SocialLinks from "/src/components/SocialLinks";
+import MenuLeft from "/src/components/MenuLeft";
+import MenuRight from "/src/components/MenuRight";
+import CloseNotify from "/src/components/Notification/CloseNotify";
 
-import { projectList } from "../data/projectsData"
+import { projectList } from "/src/data/projectsData"
 
 function Root() {
   const [menuIsActive, setMenuIsActive] = useState(false)

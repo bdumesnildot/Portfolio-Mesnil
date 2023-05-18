@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import "../styles/components-styles/Menu.scss";
+import "/src/styles/components-styles/Menu.scss";
 
 function MenuLeft({ menuIsActive }) {
   const [leftTranslateY, setLeftTranslateY] = useState(-100);

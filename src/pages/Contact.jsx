@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useForm } from 'react-hook-form';
 
-import "../styles/pages-styles/Contact.scss";
+import "/src/styles/pages-styles/Contact.scss";
 
-import sendEmail from "../utils/sendEmail";
-import Notification from "../components/Notification/Notification";
+import sendEmail from "/src/utils/sendEmail";
+import Notification from "/src/components/Notification/Notification";
 
 function Contact() {
   const { 

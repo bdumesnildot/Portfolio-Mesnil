@@ -1,7 +1,7 @@
 import { toast, Slide } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
-import "../../styles/components-styles/Notification.scss";
+import "/src/styles/components-styles/Notification.scss";
 
 function Notification({
   text = "",

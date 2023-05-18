@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 
-import "../styles/components-styles/ProjectImgDisplayer.scss"
+import "/src/styles/components-styles/ProjectImgDisplayer.scss"
 
-import { projectList } from "../data/projectsData"
+import { projectList } from "/src/data/projectsData"
 
-import ProjectImgNav from './ProjectImgNav';
-import ProjectImgOverview from './ProjectImgOverview';
-import ProjectImgGallery from './ProjectImgGallery';
+import ProjectImgNav from '/src/components/ProjectImgNav';
+import ProjectImgOverview from '/src/components/ProjectImgOverview';
+import ProjectImgGallery from '/src/components/ProjectImgGallery';
 
 function ProjectImgDisplayer() {
   const { 

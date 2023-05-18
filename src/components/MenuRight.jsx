@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 
-import "../styles/components-styles/Menu.scss";
+import "/src/styles/components-styles/Menu.scss";
 
-import SocialLinks from "../components/SocialLinks";
+import SocialLinks from "/src/components/SocialLinks";
 
 function MenuRight({ menuIsActive, setMenuIsActive }) {
   const [rightTranslateY, setRightTranslateY] = useState(100);

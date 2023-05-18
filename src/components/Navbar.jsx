@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useMediaQuery } from 'react-responsive'
-import "../styles/components-styles/Navbar.scss"
+import "/src/styles/components-styles/Navbar.scss"
 
 function Navbar({ setMenuIsActive }) {
 
