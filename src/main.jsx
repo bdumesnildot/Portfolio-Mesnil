@@ -7,7 +7,6 @@ import ErrorPage from "./pages/ErrorPage";
 import Projects from "./pages/Projects";
 import Info from "./pages/Info";
 import Contact from "./pages/Contact";
-import TestPage from "./tests/TestPage";
 
 const router = createBrowserRouter([
   {
