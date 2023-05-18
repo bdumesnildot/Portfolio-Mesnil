@@ -20,11 +20,41 @@
     grid-template-columns: auto 1fr;
   }
 
-  h2 {
+  .project-left-container {
     grid-column-start: 1;
     align-self: start;
-    @extend %h2-vert;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    h2 {
+      @extend %h2-vert;
+    }
+
+    .project-nav {
+      margin-right: 70px;
+
+      p {
+        letter-spacing: .02em;
+      }
+
+      svg {
+        @extend %transition-base;
+        display: block;
+        height: 20px;
+        padding: 10px;
+        color: $text-color-1;
+        cursor: pointer;
+
+        &:hover {
+          color: $button-color-hover-1;
+        }
+      }
+    }
+
+
   }
+
 
   .projects-cont {
     grid-column-start: 2;

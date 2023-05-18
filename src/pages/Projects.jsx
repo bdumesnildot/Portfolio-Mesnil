@@ -7,8 +7,11 @@ function Projets() {
 
   return(
     <div className="projects">
-      <h2>Projets</h2>
-      <ProjectNav />
+      <div className="project-left-container">
+        <h2>Projets</h2>
+        <ProjectNav />
+
+      </div>
       <div className="projects-cont">
         <ProjectImgDisplayer />
       </div>
