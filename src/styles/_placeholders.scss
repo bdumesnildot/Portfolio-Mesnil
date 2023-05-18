@@ -8,3 +8,156 @@
   -o-transition: all 0.5s ease-in-out;
 }
 
+%flex-align-center {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+%h1-pages {
+  margin: 10px 30px;
+  text-align: right;
+  @media screen and (min-width: 769px) {
+    margin: 10px 50px;
+  }
+}
+
+%h2-vert {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: .02em;
+  margin: 20px 15px 20px 15px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 2.5rem;
+    margin: 20px 15px 20px 15px;
+  }
+
+  @media screen and (min-width: 1224px) {
+    font-size: 3rem;
+    margin: 50px 50px 50px 100px;
+  }
+}
+
+%title-upperCase-spacing {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+%link {
+  height: 100%;
+  list-style: none;
+  letter-spacing: 0.02em;
+  padding: 0 5px;
+  margin: 0 3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+  a {
+    @extend %transition-base;
+    text-decoration: none ;
+    color:$text-color-1;
+  }
+
+  .underline {
+    @extend %transition-base;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    border-top: 1px solid $text-color-hover-1;
+  }
+  
+  &:hover a {
+    color: $text-color-hover-1;
+  }
+
+  &:hover .underline {
+    border-left: 1px solid $text-color-hover-1;
+    animation: slidein 0.5s ease-in-out forwards;
+  }
+  
+  &:not(:hover) .underline {
+    animation: slideout 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes slidein {
+    from {
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+    to {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+  
+  @keyframes slideout {
+    from {
+      transform: scaleX(1);
+      transform-origin: right;
+    }
+    to {
+      transform: scaleX(0);
+      transform-origin: right;
+    }
+  }
+}
+
+
+%btn-type-menu {
+  @extend %transition-base;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: 0;
+  padding: 0 5px;
+  text-transform: uppercase;
+  color: $text-color-1;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:before {
+    @extend %transition-base;
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: $text-color-1;
+    position: absolute;
+    left: -1em;
+    top: 40%;
+  }
+  
+  &:hover {
+    color: $text-color-hover-1;
+  }
+
+  &:hover:before {
+    transform: scale(0.7);
+    transform-origin: center;
+    background-color: $text-color-hover-1;
+  }
+}
+
+%scrollbar {
+  &::-webkit-scrollbar {
+    width: 4px;
+    background-color: transparent;
+    margin-right: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $border-color-1;
+    border-radius: 4px;
+    height: 20px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    margin: 20px 5px;
+  }
+}
+

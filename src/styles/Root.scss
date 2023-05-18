@@ -1,0 +1,83 @@
+@import "_variables.scss";
+@import "_placeholders.scss";
+@import "_mixins.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family-1-poppin;
+}
+
+.root-page {
+  width: 100vw;
+
+  .circular-text {
+    height: 500px;
+    font-family: $font-family-2-EbGaramond;
+    transform: rotate(-30deg);
+    transform-origin: center;
+  }
+
+  .root-content {
+    min-height: calc(100vh - 80px);
+    width: 100%;
+    @extend %flex-align-center;
+    justify-content: center;
+    overflow: hidden;
+  }
+}
+
+h1 {
+  color: $title-color-1;
+  font-family: $font-family-2-EbGaramond;
+  font-weight: 400;
+  font-size: 4rem;
+  @media screen and (min-width: 426px) {
+    font-size: 6rem;
+  }
+  @media screen and (min-width: 769px) {
+    font-size: 8rem;
+  }
+}
+
+h2 {
+  color: $title-color-1;
+  font-family: $font-family-1-poppin;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+h3 {
+  color: $title-color-1;
+  font-family: $font-family-2-EbGaramond;
+  font-weight: 400;
+  font-size: 3rem;
+  letter-spacing: .02em;
+  margin: 20px 0;
+
+  @media screen and (min-width: 769px) {
+    font-size: 4rem;
+  }
+}
+
+h4 {
+  color: $title-color-1;
+  font-family: $font-family-2-EbGaramond;
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: .02em;
+  margin: 20px 0 4px 0;
+
+  @media screen and (min-width: 769px) {
+    font-size: 3rem;
+  }
+}
+
+p {
+  color: $title-color-1;
+  font-family: $font-family-1-poppin;
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 1em 0;
+}
