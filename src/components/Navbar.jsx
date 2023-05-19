@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useMediaQuery } from 'react-responsive'
+
 import "/src/styles/components-styles/Navbar.scss"
-import logo from "/src/assets/svg/Mesnil-logo.svg"
+import logo from "/src/assets/SVG/Mesnil-logo.svg"
 
 function Navbar({ setMenuIsActive }) {
 

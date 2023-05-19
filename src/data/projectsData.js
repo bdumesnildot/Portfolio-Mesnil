@@ -3,7 +3,7 @@ export const projectList = [
     id: 1,
     name: "Carry Care",
     url: "",
-    description: "Destiné aux voyageurs qui veulent déposer leurs bagages lors de la visite d'une ville. L'application offre aux utilisateurs la possibilité de chercher des conciergeries participatives disponibles par ville.",
+    description: "Réalisé lors de mon premier Hackathon, Carry Care est Destiné aux voyageurs qui veulent déposer leurs bagages lors de la visite d'une ville. L'application offre aux utilisateurs la possibilité de chercher des conciergeries participatives disponibles par ville.",
     type: "Hackathon - 10 équipes - 1ère place",
     year: 2023,
     date_0: "11/05/2023",
