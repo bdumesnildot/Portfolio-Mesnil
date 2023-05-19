@@ -3,14 +3,15 @@ import { Link } from "react-router-dom";
 
 import "/src/styles/components-styles/SocialLinks.scss";
 
+import pathGitHub from "/src/assets/SVG/iconGitHub.svg";
+import pathGitHubHover from "/src/assets/SVG/iconGitHub-hover.svg";
+import pathLinkedIn from "/src/assets/SVG/iconLinkedIn.svg";
+import pathLinkedInHover from "/src/assets/SVG/iconLinkedIn-hover.svg";
+
 function SocialLinks() {
   const [isHoverGitHub, setIsHoverGitHub] = useState(false);
   const [isHoverLinkedIn, setIsHoverLinkedIn] = useState(false);
 
-  const pathGitHub = "/src/assets/SVG/iconGitHub.svg";
-  const pathGitHubHover = "/src/assets/SVG/iconGitHub-hover.svg";
-  const pathLinkedIn = "/src/assets/SVG/iconLinkedIn.svg";
-  const pathLinkedInHover = "/src/assets/SVG/iconLinkedIn-hover.svg";
 
   return (
     <div className="SocialLinks">

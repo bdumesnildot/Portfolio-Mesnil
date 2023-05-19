@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useMediaQuery } from 'react-responsive'
 import "/src/styles/components-styles/Navbar.scss"
+import logo from "/src/assets/svg/Mesnil-logo.svg"
 
 function Navbar({ setMenuIsActive }) {
 
@@ -13,7 +14,7 @@ function Navbar({ setMenuIsActive }) {
       <Link to="/">
         <img
           className="nav-logo"
-          src="src/assets/svg/Mesnil-logo.svg" 
+          src={logo}
           alt="Logo"
         />
       </Link>
